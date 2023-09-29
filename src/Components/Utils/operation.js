@@ -3,7 +3,7 @@ import { tezos } from "./tezos";
 
 export const certificateDetails = async () => {
   try {
-    const contractInstance = await tezos.wallet.at("KT1EnakytgBpYTicnDxbkdA7eUqqJ5qZzg7S");
+    const contractInstance = await tezos.wallet.at("KT1MYxy9CNH5cT3vTm2Pf2nBbxoggGNp8tvY");
     const op = await contractInstance.methods.buy_ticket().send({
       amount: 1,
       mutez: false,
