@@ -1,5 +1,7 @@
-
-.names{
+*{
+  margin:0;
+}
+.name{
     display: flex;
     flex-direction: row;
     justify-content: space-between;

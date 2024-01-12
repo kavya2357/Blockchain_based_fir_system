@@ -35,6 +35,26 @@ function Fbform() {
         alert("Error occured")
       }
     }
+    const [errors, setErrors] = useState({});
+   const Validation=(e)=>{
+      const newErrors = {};
+
+      if (!/^[a-zA-Z\s]+$/.test(info.fname)) {
+        newErrors.fname = 'Name should only contain letters and spaces';
+      }
+
+      if (!info.aadhar) {
+        newErrors.aadhar = 'Aadhar Number is required';
+      } else if (!/^\d{12}$/.test(info.aadhar)) {
+        newErrors.aadhar = 'Invalid Aadhar Number (must be 12 digits)';
+      }
+
+    setErrors(newErrors);
+   }
+    const handleSubmit = (e) => {
+      Validation(e);
+      getdata(e);
+    };
   return (
     <div>
       <div style={{backgroundColor:'rgb(2 132 199)'}}>
@@ -46,44 +66,46 @@ function Fbform() {
           <div className="name">
             <div>
               <label>First Name : </label>
-              <input type="text" name="fname" step="1" style={{width:'280px'}} value={info.fname} onChange={data}/>
+              <input type="text" name="fname" step="1" style={{width:'280px'}} value={info.fname} onChange={data} />
+              {errors.name && <div className="error">{errors.name}</div>}
+              
             </div>
             
             <div>
               <label>Last Name : </label>
-              <input type="text" name="lname" step="1" style={{width:'280px'}} value={info.lname} onChange={data}/>
+              <input type="text" name="lname" step="1" style={{width:'280px'}} value={info.lname} onChange={data} />
             </div>
           </div>
           
           <div>
               <label>Father's Name : </label>
-              <input type="text" name="fathersName" step="1" value={info.fathersName} onChange={data}/>
+              <input type="text" name="fathersName" step="1" value={info.fathersName} onChange={data} />
           </div>
           
           <div>
               <label>Aadhar Number: </label>
-              <input type="text" name="aadhar" step="1" required value={info.aadhar} onChange={data}/><br></br>
+              <input type="text" name="aadhar" step="1" required value={info.aadhar} onChange={data}/>
           </div>
 
           <div>
               <label>Gender : </label>
-              <input type="text" name="gender" step="1" value={info.gender} onChange={data}/><br></br>
+              <input type="text" name="gender" step="1" value={info.gender} onChange={data} />
           </div>
 
           <div>
             <label> Age : </label>
-            <input type="text" name="age" step="1" value={info.age} onChange={data}/>
+            <input type="text" name="age" step="1"  value={info.age} onChange={data} />
           </div>
 
           <div>
             <label>Phone : </label>
-            <input type="text" name="PhoneNumber" step="1" value={info.PhoneNumber} onChange={data}/>
+            <input type="text" name="PhoneNumber" step="1" value={info.PhoneNumber} onChange={data} />
           </div>
 
           <div>
             <div>
                 <label>Street Adress:</label>
-                <input type="text" name="address" step="1" value={info.address} onChange={data}/>
+                <input type="text" name="address" step="1" value={info.address} onChange={data} />
             </div>
             
             <div className="address">
@@ -93,11 +115,11 @@ function Fbform() {
               </div>
               <div>
                 <label>State/Province:</label>
-                <input type="text" name="state" step="1" value={info.state} onChange={data}/>
+                <input type="text" name="state" step="1" value={info.state} onChange={data} />
               </div>
               <div>
                 <label>Zip/Postal code:</label>
-                <input type="text" name="zip" step="1" value={info.zip} onChange={data}/>
+                <input type="text" name="zip" step="1" value={info.zip} onChange={data} />
               </div>
                 
             </div>
@@ -106,15 +128,15 @@ function Fbform() {
           <b style={{marginBottom:'20px'}}>Complaint Details:</b>
           <div>
             <label>Date of Incident : </label>
-            <input type="text" name="doi" step="1" value={info.doi} onChange={data}/><br></br>
+            <input type="text" name="doi" step="1" value={info.doi} onChange={data}/>
           </div>
 
           <div>
             <label>Complaint : </label>
-            <input type="textarea" name="comments" step="1" value={info.comments} onChange={data}/><br></br>
+            <input type="textarea" name="comments" step="1" value={info.comments} onChange={data}/>
           </div>
           
-          <button onClick={getdata} style={{width:'100%', height:'40px', backgroundColor:'#6976d9', fontSize:'20px', border:'none'}}>Submit</button>
+          <button onClick={handleSubmit} style={{width:'100%', height:'40px', backgroundColor:'#6976d9', fontSize:'20px', border:'none'}}>Submit</button>
         </form>
         </div>
         </div>
