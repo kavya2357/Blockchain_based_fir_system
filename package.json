@@ -3,9 +3,6 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
-    "@material-ui/core": "^4.12.4",
-    "@material-ui/icons": "^4.11.3",
-    "@mui/icons-material": "^5.15.4",
     "@taquito/beacon-wallet": "^12.1.1",
     "@taquito/taquito": "^12.1.1",
     "@taquito/utils": "^16.0.0",
