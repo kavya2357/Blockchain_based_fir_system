@@ -10,7 +10,7 @@ function LandingPage() {
       </div>
 
       <div className='title'>
-        <p style={{fontWeight:'2500',fontSize:'60px',marginBottom:'0px'}}><b>Blockchain Based Criminal record management System</b></p>
+        <p style={{fontWeight:'2500',fontSize:'60px',marginBottom:'0px'}}><b>Blockchain Based FIR System</b></p>
         <p>
         <span style={{fontWeight:'1000',fontSize:'30px',color:'rgb(8 145 178)'}}>Efficient, </span>
         <span style={{fontWeight:'1000',fontSize:'30px',color:'rgb(15 118 110)'}}>Transparent, </span>

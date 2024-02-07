@@ -7,19 +7,21 @@
   }
   .image{
     width:50%;
-    overflow: hidden;
+    /* overflow: hidden; */
     margin:5px;
   }
   .title{
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 20px;
+    padding-top: 10rem;
+    padding-left: 8rem;
     width: 50%;
   }
 
   button{
     width:300px;
     border-radius: 5px;
+    cursor: pointer;
   }
   
